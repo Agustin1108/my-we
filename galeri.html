@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto</title>
+    <!-- Menggunakan Tailwind CSS untuk styling yang modern dan mudah -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Menggunakan Font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Mengaplikasikan font Inter ke seluruh halaman */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Memastikan gambar memiliki rasio 1:1 (persegi) */
+        .aspect-square {
+            aspect-ratio: 1 / 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+
+            <!-- Judul Halaman -->
+            <h1 class="text-3xl font-bold text-gray-800 text-center mb-8">Galeri Foto</h1>
+
+            <!-- Grid untuk Galeri Foto -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                <!-- ================================== -->
+                <!--   ITEM FOTO 1 (CONTOH)           -->
+                <!-- ================================== -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md group">
+                    <!-- 1. Ganti URL gambar di src="..." -->
+                    <img src="foto1.png" alt="Deskripsi Foto 1" class="w-full h-auto object-cover aspect-square group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-4">
+                        <!-- 2. Ganti deskripsi foto di bawah ini -->
+                        <p class="text-gray-700">"Persiapan terbaik untuk hari esok adalah melakukan pekerjaan hari ini dengan sangat baik." — William Osler</p>
+                    </div>
+                </div>
+
+                <!-- ================================== -->
+                <!--   ITEM FOTO 2 (CONTOH)           -->
+                <!-- ================================== -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md group">
+                    <img src="foto2.png" alt="Deskripsi Foto 2" class="w-full h-auto object-cover aspect-square group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-4">
+                        <p class="text-gray-700">"Dalam alam, tidak ada yang sempurna dan tidak ada yang abadi. Semuanya mengalir. Manusia berjuang untuk menciptakan apa yang seharusnya tidak dia miliki, yaitu keabadian." — Heraclitus</p>
+                    </div>
+                </div>
+
+                <!-- ================================== -->
+                <!--   ITEM FOTO 3 (CONTOH)           -->
+                <!-- ================================== -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md group">
+                    <img src="foto3.png" alt="Deskripsi Foto 3" class="w-full h-auto object-cover aspect-square group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-4">
+                        <p class="text-gray-700">"Pendidikan adalah senjata paling ampuh yang bisa kamu gunakan untuk mengubah dunia." — Nelson Mandela</p>
+                    </div>
+                </div>
+
+                <!-- ================================================================ -->
+                <!--   UNTUK MENAMBAH FOTO BARU, COPY-PASTE KODE DI BAWAH INI        -->
+                <!-- ================================================================ -->
+                <!-- 
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md group">
+                    <img src="[GANTI DENGAN LINK FOTO ANDA]" alt="[GANTI DESKRIPSI ALT]" class="w-full h-auto object-cover aspect-square group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-4">
+                        <p class="text-gray-700">[GANTI DENGAN DESKRIPSI FOTO ANDA DI SINI]</p>
+                    </div>
+                </div>
+                -->
+
+            </div>
+
+            <!-- Tombol Kembali -->
+            <div class="text-center mt-12">
+                <!-- Ganti '#' dengan link halaman utama Anda, contohnya "index.html" -->
+                <a href="index.html" class="inline-block bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-gray-700 transition-colors duration-300">
+                    Kembali
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+

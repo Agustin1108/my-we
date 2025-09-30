@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutipan Inspiratif</title>
+    <!-- Menggunakan Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Menggunakan Font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Mengaplikasikan font Inter ke seluruh halaman */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Card Utama -->
+    <div class="w-full max-w-lg mx-auto bg-white rounded-2xl shadow-lg p-8 text-center">
+        
+        <!-- Judul Halaman -->
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Kutipan Inspiratif</h1>
+
+        <!-- Kontainer untuk Kutipan dengan Animasi -->
+        <div id="quote-container" class="relative min-h-[200px] flex items-center justify-center transition-opacity duration-500 ease-in-out">
+            <!-- Ikon kutipan sebagai latar belakang -->
+            <svg class="absolute top-0 left-0 w-20 h-20 text-gray-200 transform -translate-x-4 -translate-y-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M9.333 8h-2.667c-1.473 0-2.667 1.193-2.667 2.667v8c0 1.473 1.193 2.667 2.667 2.667h5.333c0-2.947-2.387-5.333-5.333-5.333v-5.333c1.473 0 2.667-1.193 2.667-2.667zM25.333 8h-2.667c-1.473 0-2.667 1.193-2.667 2.667v8c0 1.473 1.193 2.667 2.667 2.667h5.333c0-2.947-2.387-5.333-5.333-5.333v-5.333c1.473 0 2.667-1.193 2.667-2.667z"></path>
+            </svg>
+            
+            <!-- Tempat teks kutipan dan penulis akan muncul -->
+            <div class="relative z-10">
+                <blockquote id="quote-text" class="text-2xl font-medium text-gray-700">
+                    Memuat kutipan...
+                </blockquote>
+                <cite id="quote-author" class="block text-right mt-4 not-italic text-gray-500">
+                    <!-- Penulis akan muncul di sini -->
+                </cite>
+            </div>
+        </div>
+
+        <!-- Tombol Aksi -->
+        <div class="mt-10 space-y-4">
+            <!-- Tombol untuk memuat kutipan baru -->
+            <button id="new-quote-btn" class="w-full bg-gray-800 text-white font-semibold py-3 rounded-lg shadow-md hover:bg-gray-700 hover:scale-105 transition-transform duration-300 transform">
+                Quoted
+            </button>
+            
+            <!-- Tombol Kembali ke Halaman Utama -->
+            <!-- Ganti '#' dengan link halaman utama Anda, contohnya "index.html" -->
+            <a href="index.html" class="inline-block w-full bg-gray-200 text-gray-800 font-semibold py-3 rounded-lg shadow-sm hover:bg-gray-300 transition-colors duration-300">
+                Kembali
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // ================================================================
+        // ANDA BISA MENAMBAHKAN ATAU MENGUBAH DAFTAR KUTIPAN DI SINI
+        // ================================================================
+        const quotes = [
+            {
+                text: "Kegelapan tidak ada, ia hanya ketiadaan cahaya.",
+                author: "ags"
+            },
+            {
+                text: "Batas bahasaku adalah batas duniaku.",
+                author: "ags"
+            },
+            {
+                text: "Aku memiliki rahasia, kau memiliki rahasia, bahkan langitpun memiliki rahasia.",
+                author: "ags"
+            },
+        ];
+
+        // Mengambil elemen dari HTML
+        const quoteTextElement = document.getElementById('quote-text');
+        const quoteAuthorElement = document.getElementById('quote-author');
+        const quoteContainer = document.getElementById('quote-container');
+        const newQuoteButton = document.getElementById('new-quote-btn');
+
+        let currentQuoteIndex = -1;
+
+        // Fungsi untuk menampilkan kutipan baru dengan animasi
+        function showNewQuote() {
+            // Efek fade out
+            quoteContainer.style.opacity = '0';
+
+            // Tunggu animasi fade out selesai, lalu ganti teksnya
+            setTimeout(() => {
+                let newIndex;
+                // Pastikan kutipan baru tidak sama dengan yang sekarang
+                do {
+                    newIndex = Math.floor(Math.random() * quotes.length);
+                } while (newIndex === currentQuoteIndex);
+                
+                currentQuoteIndex = newIndex;
+                const randomQuote = quotes[currentQuoteIndex];
+
+                // Update teks di HTML
+                quoteTextElement.textContent = `"${randomQuote.text}"`;
+                quoteAuthorElement.textContent = `— ${randomQuote.author}`;
+
+                // Efek fade in
+                quoteContainer.style.opacity = '1';
+            }, 500); // Durasi harus cocok dengan transisi di CSS (duration-500)
+        }
+
+        // Menambahkan event listener ke tombol
+        newQuoteButton.addEventListener('click', showNewQuote);
+
+        // Menampilkan kutipan pertama saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', showNewQuote);
+    </script>
+
+</body>
+</html>
+
